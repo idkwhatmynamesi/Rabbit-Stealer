@@ -1,9 +1,9 @@
-# 🐰 Rabbit - Advanced ZIP File Manager
+# 🐰 Rabbit - Advanced Stealer
 
 <img width="1900" height="941" alt="image" src="https://github.com/user-attachments/assets/c77a8df7-43e0-434f-945b-56063272b9b9" />
 
 
-A powerful, modern web-based ZIP file management platform built with Next.js 15, featuring advanced analytics, security, and performance optimizations.
+A powerful, modern web-based Stealer platform built with Next.js 15, featuring advanced analytics, security, and performance optimizations.
 
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-15.3.2-black)
