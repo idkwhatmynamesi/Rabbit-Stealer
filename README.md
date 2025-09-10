@@ -420,9 +420,6 @@ POST   /api/webhooks       # Manage webhooks
 - 💬 Create a new issue with detailed information
 - 📧 Contact support for enterprise inquiries
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
