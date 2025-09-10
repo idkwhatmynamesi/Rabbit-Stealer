@@ -1,0 +1,278 @@
+'use client';
+
+import { useState } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
+import { Progress } from '@/components/ui/progress';
+import {
+  Shield,
+  Lock,
+  Key,
+  AlertTriangle,
+  CheckCircle,
+  FileCheck,
+  Fingerprint,
+  ShieldCheck
+} from 'lucide-react';
+
+export default function SecurityPage() {
+  const [securityScore, setSecurityScore] = useState(75);
+  const [features, setFeatures] = useState({
+    twoFactor: false,
+    encryption: true,
+    virusScanning: true,
+    ipWhitelist: false,
+    rateLimit: true,
+    sessionTimeout: true,
+    auditLog: false,
+    backupEnabled: true
+  });
+
+  const toggleFeature = (feature: keyof typeof features) => {
+    setFeatures(prev => ({ ...prev, [feature]: !prev[feature] }));
+    // Recalculate security score
+    const enabledCount = Object.values({ ...features, [feature]: !features[feature] }).filter(v => v).length;
+    setSecurityScore(Math.round((enabledCount / Object.keys(features).length) * 100));
+  };
+
+  const getScoreColor = () => {
+    if (securityScore >= 80) return 'text-green-600';
+    if (securityScore >= 60) return 'text-yellow-600';
+    return 'text-red-600';
+  };
+
+  const getScoreLabel = () => {
+    if (securityScore >= 80) return 'Excellent';
+    if (securityScore >= 60) return 'Good';
+    if (securityScore >= 40) return 'Fair';
+    return 'Poor';
+  };
+
+  return (
+    <div>
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900">Security Center</h1>
+        <p className="mt-2 text-gray-600">
+          Manage security settings and monitor system protection
+        </p>
+      </div>
+
+      {/* Security Score */}
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle className="flex items-center justify-between">
+            <span className="flex items-center gap-2">
+              <Shield className="h-5 w-5" />
+              Security Score
+            </span>
+            <Badge className={getScoreColor()} variant="outline">
+              {getScoreLabel()}
+            </Badge>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <span className={`text-4xl font-bold ${getScoreColor()}`}>
+                {securityScore}%
+              </span>
+              <div className="text-right">
+                <p className="text-sm text-gray-600">
+                  {Object.values(features).filter(v => v).length} of {Object.keys(features).length}
+                </p>
+                <p className="text-xs text-gray-500">features enabled</p>
+              </div>
+            </div>
+            <Progress value={securityScore} className="h-3" />
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Security Features */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Authentication</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Fingerprint className="h-5 w-5 text-gray-400" />
+                <div>
+                  <Label htmlFor="2fa">Two-Factor Authentication</Label>
+                  <p className="text-xs text-gray-500">Extra layer of security</p>
+                </div>
+              </div>
+              <Switch
+                id="2fa"
+                checked={features.twoFactor}
+                onCheckedChange={() => toggleFeature('twoFactor')}
+              />
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Lock className="h-5 w-5 text-gray-400" />
+                <div>
+                  <Label htmlFor="session">Session Timeout</Label>
+                  <p className="text-xs text-gray-500">Auto-logout after inactivity</p>
+                </div>
+              </div>
+              <Switch
+                id="session"
+                checked={features.sessionTimeout}
+                onCheckedChange={() => toggleFeature('sessionTimeout')}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">File Protection</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Key className="h-5 w-5 text-gray-400" />
+                <div>
+                  <Label htmlFor="encryption">File Encryption</Label>
+                  <p className="text-xs text-gray-500">AES-256 encryption</p>
+                </div>
+              </div>
+              <Switch
+                id="encryption"
+                checked={features.encryption}
+                onCheckedChange={() => toggleFeature('encryption')}
+              />
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <FileCheck className="h-5 w-5 text-gray-400" />
+                <div>
+                  <Label htmlFor="virus">Virus Scanning</Label>
+                  <p className="text-xs text-gray-500">Scan uploads for malware</p>
+                </div>
+              </div>
+              <Switch
+                id="virus"
+                checked={features.virusScanning}
+                onCheckedChange={() => toggleFeature('virusScanning')}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Access Control</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="h-5 w-5 text-gray-400" />
+                <div>
+                  <Label htmlFor="ip">IP Whitelist</Label>
+                  <p className="text-xs text-gray-500">Restrict access by IP</p>
+                </div>
+              </div>
+              <Switch
+                id="ip"
+                checked={features.ipWhitelist}
+                onCheckedChange={() => toggleFeature('ipWhitelist')}
+              />
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <AlertTriangle className="h-5 w-5 text-gray-400" />
+                <div>
+                  <Label htmlFor="rate">Rate Limiting</Label>
+                  <p className="text-xs text-gray-500">Prevent abuse</p>
+                </div>
+              </div>
+              <Switch
+                id="rate"
+                checked={features.rateLimit}
+                onCheckedChange={() => toggleFeature('rateLimit')}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Monitoring</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <FileCheck className="h-5 w-5 text-gray-400" />
+                <div>
+                  <Label htmlFor="audit">Audit Logging</Label>
+                  <p className="text-xs text-gray-500">Track all actions</p>
+                </div>
+              </div>
+              <Switch
+                id="audit"
+                checked={features.auditLog}
+                onCheckedChange={() => toggleFeature('auditLog')}
+              />
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Shield className="h-5 w-5 text-gray-400" />
+                <div>
+                  <Label htmlFor="backup">Auto Backup</Label>
+                  <p className="text-xs text-gray-500">Daily backups</p>
+                </div>
+              </div>
+              <Switch
+                id="backup"
+                checked={features.backupEnabled}
+                onCheckedChange={() => toggleFeature('backupEnabled')}
+              />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Recent Security Events */}
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle className="text-base">Recent Security Events</CardTitle>
+          <CardDescription>Last 24 hours activity</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+              <CheckCircle className="h-5 w-5 text-green-600" />
+              <div className="flex-1">
+                <p className="text-sm font-medium">Successful login</p>
+                <p className="text-xs text-gray-500">demo@example.com - 2 hours ago</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+              <Shield className="h-5 w-5 text-blue-600" />
+              <div className="flex-1">
+                <p className="text-sm font-medium">File encrypted</p>
+                <p className="text-xs text-gray-500">archive_2024.zip - 5 hours ago</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-yellow-50 rounded-lg">
+              <AlertTriangle className="h-5 w-5 text-yellow-600" />
+              <div className="flex-1">
+                <p className="text-sm font-medium">Rate limit warning</p>
+                <p className="text-xs text-gray-500">API endpoint /upload - 8 hours ago</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
