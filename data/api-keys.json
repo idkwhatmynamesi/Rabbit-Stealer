@@ -1,0 +1,17 @@
+[
+  {
+    "id": "30fc8644c5e962f5",
+    "name": "dawdwada",
+    "key": "zfm_cJEb...pVVk",
+    "hashedKey": "f1dd2be5b5f7eded49bd01366b7719a29aaa6bc59caa6eea2a69eaf597ee314b",
+    "userId": "a8ujbceml",
+    "permissions": [
+      "read"
+    ],
+    "rateLimit": 100,
+    "expiresAt": "2026-09-07T05:42:51.420Z",
+    "usageCount": 0,
+    "createdAt": "2025-09-07T05:42:51.420Z",
+    "status": "revoked"
+  }
+]

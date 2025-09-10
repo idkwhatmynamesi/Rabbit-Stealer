@@ -1,0 +1,38 @@
+[
+  {
+    "id": "e6968a6c98f08b81",
+    "name": "hello",
+    "url": "https://discord.com/api/webhooks/1414115851602366484/vofAqkQtaqsub9V79vqri0iQGFCDqN_DV-KGjMnOIAnYgWhqi9mdkw5YGvmLvHAjQPRy",
+    "secret": "5be959d2fd567153be204bf03f6638fb92716169872b0a81363741e1c2083af0",
+    "events": [
+      "file.uploaded"
+    ],
+    "userId": "7s135cy2e",
+    "active": true,
+    "retryOnFailure": true,
+    "maxRetries": 3,
+    "successCount": 8,
+    "failureCount": 0,
+    "createdAt": "2025-09-07T05:36:31.682Z",
+    "lastTriggered": "2025-09-07T23:08:46.067Z"
+  },
+  {
+    "id": "ba78b40294b1673d",
+    "name": "wello",
+    "url": "https://discord.com/api/webhooks/1414115851602366484/vofAqkQtaqsub9V79vqri0iQGFCDqN_DV-KGjMnOIAnYgWhqi9mdkw5YGvmLvHAjQPRy",
+    "secret": "d933c5f1d634a3d645c15fb075d917ce63b0f41d325c6eea8d88cebc782b0de8",
+    "events": [
+      "file.uploaded",
+      "file.deleted",
+      "file.downloaded"
+    ],
+    "userId": "a8ujbceml",
+    "active": true,
+    "retryOnFailure": true,
+    "maxRetries": 3,
+    "successCount": 6,
+    "failureCount": 0,
+    "createdAt": "2025-09-07T05:41:37.754Z",
+    "lastTriggered": "2025-09-07T23:08:45.981Z"
+  }
+]

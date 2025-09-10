@@ -1,0 +1,50 @@
+{
+  "show_message_box": {
+    "enabled": false,
+    "config": {
+      "message": "Upload completed successfully!"
+    }
+  },
+  "play_sound": {
+    "enabled": false,
+    "config": {
+      "soundFile": "notification.wav"
+    }
+  },
+  "auto_open_folder": {
+    "enabled": false
+  },
+  "webhook_notification": {
+    "enabled": false,
+    "config": {
+      "url": ""
+    }
+  },
+  "desktop_notification": {
+    "enabled": false
+  },
+  "log_to_file": {
+    "enabled": false,
+    "config": {
+      "logPath": "uploads.log"
+    }
+  },
+  "verify_checksum": {
+    "enabled": false
+  },
+  "auto_compress": {
+    "enabled": false,
+    "config": {
+      "threshold": "10MB"
+    }
+  },
+  "encrypt_upload": {
+    "enabled": false,
+    "config": {
+      "algorithm": "AES-256"
+    }
+  },
+  "batch_mode": {
+    "enabled": false
+  }
+}
