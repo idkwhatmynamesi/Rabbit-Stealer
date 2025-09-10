@@ -57,7 +57,7 @@ A powerful, modern web-based Stealer platform built with Next.js 15, featuring a
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/rabbit-zip-manager.git
+   git clone https://github.com/luis22d/Rabbit-Stealer.git
    cd rabbit-zip-manager
    ```
 
@@ -286,7 +286,7 @@ CMD ["npm", "start"]
 
 ```bash
 # On your server
-git clone https://github.com/yourusername/rabbit-zip-manager.git
+git clone https://github.com/luis22d/Rabbit-Stealer.git
 cd rabbit-zip-manager
 npm install
 npm run build
